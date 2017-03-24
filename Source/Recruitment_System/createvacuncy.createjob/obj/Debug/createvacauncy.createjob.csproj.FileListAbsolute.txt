@@ -1,0 +1,2 @@
+C:\Users\prabath.boomawalage\Documents\Visual Studio 2015\Projects\R_System\Recruitment Systeam\Source\Recruitment_System\createvacuncy.createjob\bin\Debug\createvacuncy.createjob.exe.config
+F:\Recruitment System\Source\Recruitment_System\createvacuncy.createjob\bin\Debug\createvacuncy.createjob.exe.config

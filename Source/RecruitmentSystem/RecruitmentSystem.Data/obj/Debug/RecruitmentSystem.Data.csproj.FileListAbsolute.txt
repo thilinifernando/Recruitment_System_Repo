@@ -7,3 +7,6 @@ C:\Users\prabath.boomawalage\Documents\Visual Studio 2015\Projects\Recruitment_S
 C:\Users\prabath.boomawalage\Documents\Visual Studio 2015\Projects\Recruitment_System_Repo\Source\RecruitmentSystem\RecruitmentSystem.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\prabath.boomawalage\Documents\Visual Studio 2015\Projects\Recruitment_System_Repo\Source\RecruitmentSystem\RecruitmentSystem.Data\obj\Debug\RecruitmentSystem.Data.dll
 C:\Users\prabath.boomawalage\Documents\Visual Studio 2015\Projects\Recruitment_System_Repo\Source\RecruitmentSystem\RecruitmentSystem.Data\obj\Debug\RecruitmentSystem.Data.pdb
+C:\Users\prabath.boomawalage\Documents\Visual Studio 2015\Projects\Recruitment_System_Repo\Source\RecruitmentSystem\RecruitmentSystem.Data\obj\Debug\RecruitmentSystem.Data.csprojResolveAssemblyReference.cache
+C:\Users\prabath.boomawalage\Documents\Visual Studio 2015\Projects\Recruitment_System_Repo\Source\RecruitmentSystem\RecruitmentSystem.Data\obj\Debug\RecruitmentSystem.Data.Migrations.Initial.resources
+C:\Users\prabath.boomawalage\Documents\Visual Studio 2015\Projects\Recruitment_System_Repo\Source\RecruitmentSystem\RecruitmentSystem.Data\obj\Debug\RecruitmentSystem.Data.csproj.GenerateResource.Cache

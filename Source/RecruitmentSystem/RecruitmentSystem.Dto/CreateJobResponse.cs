@@ -7,5 +7,6 @@ namespace RecruitmentSystem.Dto
 {
     public class CreateJobResponseDto
     {
+
     }
 }

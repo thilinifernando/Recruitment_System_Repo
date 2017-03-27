@@ -7,7 +7,9 @@ namespace RecruitmentSystem.Dto
 {
     public class CreateJobRequestDto
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int JobID { get; set; } 
+        public String JobTitle { get; set; }
+        public int Create_User_ID { get; set; }
+        public DateTime CreateDate { get; set; }
     }
-}
+} 

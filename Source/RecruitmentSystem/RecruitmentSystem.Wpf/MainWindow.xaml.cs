@@ -29,18 +29,58 @@ namespace createvacuncy.createjob
 
         private async void button_Click(object sender, RoutedEventArgs e)
         {
+
             var url = "http://localhost:58917/api/Jobs/CreateJob";
+
             var data = new CreateJobRequestDto()
+
             {
-                Id = 1,
-                Name = "test"
+                JobID = 3,
+                JobTitle = "QA",
+                Create_User_ID = 2,
+                CreateDate = DateTime.Now
+
+
+
             };
 
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
+
+
+
             var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
-            var response = await httpClient.PostAsync(url, new StringContent(json, Encoding.UTF32, "application/json"));
-            response.EnsureSuccessStatusCode();
+
+            var response = await httpClient.PostAsync(url, new StringContent(json,Encoding.UTF8, "application/json"));
+
+            // response.EnsureSuccessStatusCode();
+             if (response.IsSuccessStatusCode)
+            {
+                // Handle success
+            }
+            else
+            {
+                // Handle failure
+            }
+        }
+
+    }
+
+            //var url = "http://localhost:58917/api/Jobs/CreateJob";
+            //var data = new CreateJobRequestDto()
+            //{
+            //    JobID = 3,
+            //    JobTitle = "QA",
+            //    Create_User_ID = 2,
+            //    CreateDate = DateTime.Now
+
+
+            //};
+
+            //string json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
+            //var httpClient = new HttpClient();
+            //httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
+            //var response = await httpClient.PostAsync(url, new StringContent(json, Encoding.UTF32, "application/json"));
+            //response.EnsureSuccessStatusCode();
 
 
             ////////////////////////////////////////
@@ -56,22 +96,18 @@ namespace createvacuncy.createjob
 
             //MessageBox.Show(content);
 
-        }
 
-        private async Task SendData()
-        {
-            var url = "http://localhost:58917/api/Jobs/CreateJob";
-            var data = new CreateJobRequestDto()
-            {
-                Id = 1,
-                Name = "test"
-            };
+             // private async Task SendData()
+             //  {
+        
+          
 
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
-            var httpClient = new HttpClient();
-            var response = await httpClient.PostAsync(url, new StringContent(json));
-            response.EnsureSuccessStatusCode();
+             //}
 
-        }
-    }
-}
+    } 
+    
+
+    
+       
+
+ 

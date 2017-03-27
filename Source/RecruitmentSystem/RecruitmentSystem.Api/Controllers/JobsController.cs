@@ -18,19 +18,19 @@ namespace RecruitmentSysteam.API.Controllers
 
             using (var ctx = new RecruitmentSystemDbContext())
             {
-                //Student stud = new Student() { StudentName = "New Student" };
+                Job  stud = new Job () {JobID = request.JobID ,  JobTitle= request.JobTitle ,Create_User_ID = request.Create_User_ID   ,CreateDate= DateTime.Today };
 
-                //ctx.Students.Add(stud);
-                //ctx.SaveChanges();
+                ctx.Jobs.Add(stud);
+                ctx.SaveChanges();
             }
 
             return new CreateJobResponseDto();
         }
 
-        [HttpGet]
-        public List<JobDto> GetAllJobs()
-        {
-            return new List<JobDto> { new JobDto { Name = "jobname", Id = 1 }, new JobDto { Name = "jobname", Id = 2 } };
-        }
+        //[HttpGet]
+        //public List<JobDto> GetAllJobs()
+        //{
+        //    return new List<JobDto> { new JobDto { Name = "jobname", Id = 1 }, new JobDto { Name = "jobname", Id = 2 } };
+        //}
     }
 }

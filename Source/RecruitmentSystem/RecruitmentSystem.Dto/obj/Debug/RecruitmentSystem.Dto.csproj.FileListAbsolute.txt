@@ -1,5 +1,0 @@
-C:\Users\prabath.boomawalage\Documents\Visual Studio 2015\Projects\Recruitment_System_Repo\Source\RecruitmentSystem\RecruitmentSystem.Dto\bin\Debug\RecruitmentSystem.Dto.dll
-C:\Users\prabath.boomawalage\Documents\Visual Studio 2015\Projects\Recruitment_System_Repo\Source\RecruitmentSystem\RecruitmentSystem.Dto\bin\Debug\RecruitmentSystem.Dto.pdb
-C:\Users\prabath.boomawalage\Documents\Visual Studio 2015\Projects\Recruitment_System_Repo\Source\RecruitmentSystem\RecruitmentSystem.Dto\obj\Debug\RecruitmentSystem.Dto.dll
-C:\Users\prabath.boomawalage\Documents\Visual Studio 2015\Projects\Recruitment_System_Repo\Source\RecruitmentSystem\RecruitmentSystem.Dto\obj\Debug\RecruitmentSystem.Dto.pdb
-C:\Users\prabath.boomawalage\Documents\Visual Studio 2015\Projects\Recruitment_System_Repo\Source\RecruitmentSystem\RecruitmentSystem.Dto\obj\Debug\RecruitmentSystem.Dto.csprojResolveAssemblyReference.cache

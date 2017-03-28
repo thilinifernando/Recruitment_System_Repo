@@ -35,9 +35,9 @@ namespace createvacuncy.createjob
             var data = new CreateJobRequestDto()
 
             {
-                JobID = 3,
-                JobTitle = "QA",
-                Create_User_ID = 2,
+                JobID = Convert.ToInt32(txt_JobId.Text),
+                JobTitle = txt_JobTitle.Text,
+                Create_User_ID = Convert.ToInt32(txt_Uid.Text),
                 CreateDate = DateTime.Now
 
 

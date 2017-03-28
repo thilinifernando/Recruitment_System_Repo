@@ -10,13 +10,10 @@
         <Label x:Name="label" Content="Job Title" HorizontalAlignment="Left" Margin="31,66,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="Job ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,19,0,0"/>
         <Label x:Name="label2" Content="Create User ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,112,0,0"/>
-        
-        <Label x:Name="label3" Content="Date" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.146,7.019" Margin="31,156,0,0"/>
-        <TextBox x:Name="ID" HorizontalAlignment="Left" Height="26" Margin="233,19,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="91"/>
-        <TextBox x:Name="Title" HorizontalAlignment="Left" Height="26" Margin="233,66,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="91"/>
-        <TextBox x:Name="UID" HorizontalAlignment="Left" Height="26" Margin="233,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="91"/>
-        <TextBox x:Name="Date" HorizontalAlignment="Left" Height="29" Margin="233,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="91"/>
-       
+        <TextBox x:Name="txt_JobId" HorizontalAlignment="Left" Height="26" Margin="233,19,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="91"/>
+        <TextBox x:Name="txt_JobTitle" HorizontalAlignment="Left" Height="26" Margin="233,66,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="91"/>
+        <TextBox x:Name="txt_Uid" HorizontalAlignment="Left" Height="26" Margin="233,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="91"/>
+
         <Button x:Name="button" Content="Buttons" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="163,253,0,0" Click="button_Click"/>
 
     </Grid>

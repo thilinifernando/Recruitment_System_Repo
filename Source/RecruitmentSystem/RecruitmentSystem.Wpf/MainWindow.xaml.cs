@@ -30,7 +30,7 @@ namespace createvacuncy.createjob
         private async void button_Click(object sender, RoutedEventArgs e)
         {
 
-            var url = "http://localhost:58917/api/Jobs/CreateJob";
+            var url = "http://localhost:58917/api/Jobs";
 
             var data = new CreateJobRequestDto()
 

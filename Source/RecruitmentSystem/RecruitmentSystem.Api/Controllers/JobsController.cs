@@ -1,5 +1,6 @@
 ﻿
 using RecruitmentSystem.Data;
+using RecruitmentSystem.Data.Repositories;
 using RecruitmentSystem.Dto;
 using System;
 using System.Collections.Generic;
@@ -12,25 +13,25 @@ namespace RecruitmentSysteam.API.Controllers
 {
     public class JobsController : ApiController
     {
-        [HttpPost]
-        public CreateJobResponseDto CreateJob([FromBody]CreateJobRequestDto request)
+
+        IJobsRepository _repository;
+
+        public JobsController()
         {
-
-            using (var ctx = new RecruitmentSystemDbContext())
-            {
-                Job  stud = new Job () {JobID = request.JobID ,  JobTitle= request.JobTitle ,Create_User_ID = request.Create_User_ID   ,CreateDate= DateTime.Today };
-
-                ctx.Jobs.Add(stud);
-                ctx.SaveChanges();
-            }
+            _repository = new JobsRepository();
+        }
+       
+        public CreateJobResponseDto Post ([FromBody]CreateJobRequestDto request)
+        {
+            Job stud = new Job() { JobID = request.JobID, JobTitle = request.JobTitle, Create_User_ID = request.Create_User_ID, CreateDate = DateTime.Today };
+            _repository.CreateJob(stud);
 
             return new CreateJobResponseDto();
         }
 
-        //[HttpGet]
-        //public List<JobDto> GetAllJobs()
-        //{
-        //    return new List<JobDto> { new JobDto { Name = "jobname", Id = 1 }, new JobDto { Name = "jobname", Id = 2 } };
-        //}
+        public IEnumerable<JobDto> Get()
+        {
+            return _repository.GetAll().Select(t=>new JobDto { JobID = t.JobID, CreateDate = t.CreateDate, JobTitle = t.JobTitle});
+        }
     }
 }

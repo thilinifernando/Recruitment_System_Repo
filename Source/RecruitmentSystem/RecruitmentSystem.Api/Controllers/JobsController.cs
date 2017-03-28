@@ -5,8 +5,6 @@ using RecruitmentSystem.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace RecruitmentSysteam.API.Controllers
@@ -30,8 +28,11 @@ namespace RecruitmentSysteam.API.Controllers
         }
 
         public IEnumerable<JobDto> Get()
-        {
-            return _repository.GetAll().Select(t=>new JobDto { JobID = t.JobID, CreateDate = t.CreateDate, JobTitle = t.JobTitle});
+        { 
+
+             
+            return
+                _repository.GetAll().Select(t=>new JobDto { JobID = t.JobID, CreateDate = t.CreateDate, JobTitle = t.JobTitle});
         }
     }
 }

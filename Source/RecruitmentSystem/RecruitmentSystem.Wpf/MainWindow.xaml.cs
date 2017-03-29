@@ -1,8 +1,10 @@
-﻿using RecruitmentSystem.Dto;
+﻿using Newtonsoft.Json;
+using RecruitmentSystem.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -63,48 +65,70 @@ namespace createvacuncy.createjob
             }
         }
 
+        private async void button1_Click(object sender, RoutedEventArgs e)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://localhost:58917/api/Jobs");
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync("/api/Jobs");
+                response.EnsureSuccessStatusCode();
+
+
+                var responseAsString = await response.Content.ReadAsStringAsync();
+
+
+                var model = JsonConvert.DeserializeObject<List<CreateJobResponseDto>>(responseAsString);
+
+                this.dataGrid.ItemsSource = model;
+                // dataGrid.DataSource = result;
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Student not Found");
+            }
+
+
+
+
+
+            //  var url = "http://localhost:58917/api/Jobs/getalljobs";
+
+            //  var httpClient = new HttpClient();
+            //  var response =  httpClient.GetAsync(url);
+
+            //  //will throw an exception if not successful
+            //  //rponse.EnsureSuccessStatusCode();
+
+
+            // //tring content =  response.Content.ReadAsStringAsync();
+
+            ////MessageBox.Show(content);
+
+        }
+
+
+        private async Task SendData()
+        {
+
+
+
+        }
+
+
     }
+}
+    
 
-            //var url = "http://localhost:58917/api/Jobs/CreateJob";
-            //var data = new CreateJobRequestDto()
-            //{
-            //    JobID = 3,
-            //    JobTitle = "QA",
-            //    Create_User_ID = 2,
-            //    CreateDate = DateTime.Now
-
-
-            //};
-
-            //string json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
-            //var httpClient = new HttpClient();
-            //httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
-            //var response = await httpClient.PostAsync(url, new StringContent(json, Encoding.UTF32, "application/json"));
-            //response.EnsureSuccessStatusCode();
-
-
-            ////////////////////////////////////////
+          
             //var url = "http://localhost:58917/api/Jobs/getalljobs";
 
-            //var httpClient = new HttpClient();
-            //var response =  await httpClient.GetAsync(url);
+           
 
-            ////will throw an exception if not successful
-            //response.EnsureSuccessStatusCode();
-
-            //string content = await response.Content.ReadAsStringAsync();
-
-            //MessageBox.Show(content);
-
-
-             // private async Task SendData()
-             //  {
-        
-          
-
-             //}
-
-    } 
+    
     
 
     

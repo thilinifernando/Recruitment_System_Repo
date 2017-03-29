@@ -15,8 +15,6 @@
         <TextBox x:Name="txt_Uid" HorizontalAlignment="Left" Height="26" Margin="233,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="91"/>
 
         <Button x:Name="button" Content="Buttons" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="31,138,0,0" Click="button_Click"/>
-        <Button x:Name="button1" Content="Get" HorizontalAlignment="Left" Height="22" Margin="390,160,0,0" VerticalAlignment="Top" Width="92" Click="button1_Click"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="128" Margin="47,182,0,0" VerticalAlignment="Top" Width="450"/>
-
+ 
     </Grid>
 </Window>

@@ -15,6 +15,11 @@ namespace RecruitmentSystem.Data
         public int Create_User_ID { get; set; }
         public DateTime CreateDate { get; set; }
 
+        public String  ReferenceID { get; set; }
+
+        public List<InterviewStage> InterviewStages { get; set; }
+
+        public List<Skill> Skills { get; set; } //advertised Skills
     }
 
 }

@@ -49,24 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Candidate.cs" />
+    <Compile Include="Comment.cs" />
+    <Compile Include="Interviewer.cs" />
+    <Compile Include="InterviewStage.cs" />
     <Compile Include="Job.cs" />
-    <Compile Include="Migrations\201703270544062_Initial.cs" />
-    <Compile Include="Migrations\201703270544062_Initial.Designer.cs">
-      <DependentUpon>201703270544062_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201703291119556_Initial.cs" />
+    <Compile Include="Migrations\201703291119556_Initial.Designer.cs">
+      <DependentUpon>201703291119556_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecruitmentSystemDbContext.cs" />
     <Compile Include="Repositories\IJobsRepository.cs" />
     <Compile Include="Repositories\JobsRepository.cs" />
+    <Compile Include="Skill.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703270544062_Initial.resx">
-      <DependentUpon>201703270544062_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703291119556_Initial.resx">
+      <DependentUpon>201703291119556_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

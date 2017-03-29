@@ -19,12 +19,22 @@ namespace RecruitmentSysteam.API.Controllers
             _repository = new JobsRepository();
         }
        
-        public CreateJobResponseDto Post ([FromBody]CreateJobRequestDto request)
+        public IHttpActionResult Post ([FromBody]CreateJobRequestDto request)
         {
-            Job stud = new Job() { JobID = request.JobID, JobTitle = request.JobTitle, Create_User_ID = request.Create_User_ID, CreateDate = DateTime.Today };
-            _repository.CreateJob(stud);
+            try
+            {
+                Job stud = new Job() { JobID = request.JobID, JobTitle = request.JobTitle, Create_User_ID = request.Create_User_ID, CreateDate = DateTime.Today };
+                _repository.CreateJob(stud);
+            }
+            catch (Exception)
+            {
 
-            return new CreateJobResponseDto();
+                return InternalServerError();
+            }
+           
+
+
+            return Ok(new CreateJobResponseDto());
         }
 
         public IEnumerable<JobDto> Get()

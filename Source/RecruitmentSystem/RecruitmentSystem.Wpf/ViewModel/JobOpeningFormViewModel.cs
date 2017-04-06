@@ -126,7 +126,7 @@ namespace RecruitmentSystem.Wpf.ViewModel
                 // Handle failure
             }
 
-            MessageBox.Show("Job Creted");
+            MessageBox.Show("Saved");
 
             IsFrameVisible = true;
 

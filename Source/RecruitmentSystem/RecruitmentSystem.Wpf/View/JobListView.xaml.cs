@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using RecruitmentSystem.Dto;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace RecruitmentSystem.Wpf.View
 {
@@ -23,6 +27,39 @@ namespace RecruitmentSystem.Wpf.View
         public JobListView()
         {
             InitializeComponent();
+        }
+
+        private async void button1_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            HttpClient client = new HttpClient();
+
+            client.BaseAddress = new Uri("http://localhost:58917/api/Jobs");
+
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync("/api/Jobs");
+
+                response.EnsureSuccessStatusCode();
+
+                var responseAsString = await response.Content.ReadAsStringAsync();
+
+
+                var model = JsonConvert.DeserializeObject<List<CreateJobResponseDto>>(responseAsString);
+
+                this.dataGrid.ItemsSource = model;
+
+                // dataGrid.DataSource = result;
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+            }
         }
     }
 }

@@ -9,47 +9,82 @@ using System.Windows;
 
 namespace RecruitmentSystem.Wpf.ViewModel
 {
-    public class JobOpeningViewModel : IPageViewModel
+    public class JobOpeningViewModel : ObservableObject, IPageViewModel
     {
+        private ICommand createJobCommand;
+        private ICommand jobListviewCommand;
 
-       
-      
-    
-        private ICommand clickCommand;
-      
+        //page viewmodels
+        private JobOpeningFormViewModel jobOpeningFormViewModel;
+        private JobListViewModel jobListViewModel;
+
+        public JobOpeningViewModel()
+        {
+            createJobCommand = new RelayCommand(ShowJobOpeningForm, param => true);
+            jobListviewCommand = new RelayCommand(ShowJobListView, param => true);
+
+            CurrentViewModel = new JobOpeningFormViewModel();
+
+
+            jobOpeningFormViewModel = new JobOpeningFormViewModel();
+            jobListViewModel = new JobListViewModel();
+
+        }
 
         public string Name { get; set; }
 
-        public ICommand ClickCommand
+        public ICommand CreateJobCommand
         {
             get
             {
-                return clickCommand;
+                return createJobCommand;
             }
             set
             {
-                clickCommand = value;
+                createJobCommand = value;
             }
         }
+
+        public ICommand ClickCommandview
+        {
+            get
+            {
+                return jobListviewCommand;
+            }
+            set
+            {
+                jobListviewCommand = value;
+            }
+        }
+
+       private IPageViewModel currentPageViewModel;
       
-        public JobOpeningViewModel()
+        public IPageViewModel CurrentViewModel
         {
-            clickCommand = new RelayCommand(ShowMessage, param => true);
-
-
-          //  CurrentViewModel = new JobListViewModel();
-           
+            get
+            {
+                return currentPageViewModel;
+            }
+            set
+            {
+                currentPageViewModel = value;
+                RaisePropertyChangedEvent("CurrentViewModel");
+            }
         }
 
-        public IPageViewModel CurrentViewModel { get; set; }
-
-        public void ShowMessage(object obj)
+        public void ShowJobOpeningForm(object obj)
         {
-            MessageBox.Show("Hello");
+          //  MessageBox.Show("ShowJobOpeningForm");
+            CurrentViewModel = jobOpeningFormViewModel;
         }
 
-       
+        public void ShowJobListView(object obj)
+        {
+           // MessageBox.Show("ShowJobListView");
+            CurrentViewModel= jobListViewModel;
+        }
 
-        
+
+
     }
 }

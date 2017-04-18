@@ -35,7 +35,7 @@
         </Button>
 
 
-        <Frame Name="FrameWithinGrid" Grid.Row="2" Width="1000" Height="Auto" Margin="-100,0,0,0" Source="http://creativesoftware.com/user" Visibility="{Binding IsFrameVisible, Converter={StaticResource BoolToVisibility}}" >
+        <Frame Name="FrameWithinGrid" Grid.Row="2" Width="1000" Height="Auto" Margin="-100,0,0,0" Source="http://www.google.com" Visibility="{Binding IsFrameVisible, Converter={StaticResource BoolToVisibility}}" >
         <!--<Frame Name="FrameWithinGrid" Grid.Row="2" Width="1000" Height="Auto" Margin="-100,0,0,0" Source="{Binding MyProperty}">-->
             </Frame>
 

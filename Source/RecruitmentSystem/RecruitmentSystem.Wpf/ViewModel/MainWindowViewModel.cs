@@ -12,8 +12,8 @@ namespace RecruitmentSystem.Wpf.ViewModel
         public MainWindowViewModel()
         {
              CurrentViewModel = new JobOpeningViewModel();
-            //CurrentViewModel = new JobListViewModel();
-            CurrentViewModel1 = new JobOpeningFormViewModel();
+            ////CurrentViewModel = new JobListViewModel();
+            //CurrentViewModel1 = new JobOpeningFormViewModel();
         }
 
         public string Name
@@ -22,7 +22,7 @@ namespace RecruitmentSystem.Wpf.ViewModel
         }
 
         public IPageViewModel CurrentViewModel { get; set; }
-        public IPageViewModel CurrentViewModel1 { get; set; }
+       
     }
 }
 

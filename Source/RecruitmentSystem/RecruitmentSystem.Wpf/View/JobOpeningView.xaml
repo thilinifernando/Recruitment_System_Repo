@@ -4,42 +4,28 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RecruitmentSystem.Wpf.View"
-             
+             xmlns:vm2="clr-namespace:RecruitmentSystem.Wpf.ViewModel"
+             xmlns:view2="clr-namespace:RecruitmentSystem.Wpf.View"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type vm2:JobOpeningFormViewModel}">
+            <view2:JobOpeningFormView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm2:JobListViewModel}">
+            <view2:JobListView />
+        </DataTemplate>
 
+    </UserControl.Resources>
     
+    <Grid>
+        <Grid.ColumnDefinitions>
 
-    <!--<Grid Margin="10,0,0,10">
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="17*"/>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="11*"/>
-            <RowDefinition Height="89*"/>
-        </Grid.RowDefinitions>
+        </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="2"  Margin="-15,0,1200,0">
-
-            <Rectangle Width="Auto" Height="180" Margin="0,-10,0,50">
-
-                <Rectangle.Fill>
-                    <SolidColorBrush Color="#1e90ff" />
-
-                </Rectangle.Fill>
-            </Rectangle>
-            
-            <Button Width="150"  Height="30" Background="White" Content="Create Job" Command="{Binding ClickCommand}"></Button>
-
-            <Button Width="150"  Height="30"  Background="White" Content="View all Jobs" Command="{Binding ClickCommand}"></Button>
-        </StackPanel>
-
-        
-
-
-
-    </Grid>-->
-
-
-    <Grid Margin="0,0,0,0">
 
         <!--<Grid.RowDefinitions>
             <RowDefinition Height="11*"/>
@@ -47,15 +33,13 @@
             
         </Grid.RowDefinitions>-->
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+        
+        
+        <ContentControl Grid.Column="1" Content="{Binding CurrentViewModel}"></ContentControl>
 
       
 
-        <!--<TextBlock Foreground="Black">-->
+      
         <Rectangle Width="250" Height="Auto" Margin="-320,-55,0,0">
 
             <Rectangle.Fill>
@@ -65,14 +49,14 @@
         </Rectangle>
 
 
-        <Button BorderThickness="0" Width="250" Margin="-320,-720,0,0" Grid.Column="0"  Height="30" Background="#D3D3D3" Content="Create Job" Command="{Binding ClickCommand}"></Button>
+        <Button BorderThickness="0" Width="250" Margin="-320,-720,0,0" Grid.Column="0"  Height="30" Background="#D3D3D3" Content="Create Job" Command="{Binding CreateJobCommand}"></Button>
 
-        <Button BorderThickness="0" Width="250" Margin="-320,-620,0,0" Height="30" Grid.Column="0"  Background="#D3D3D3" Content="View all Jobs" Command="{Binding ClickCommand}"></Button>
-       <!--</TextBlock>-->
-
-
+        <Button BorderThickness="0" Width="250" Margin="-320,-620,0,0" Height="30" Grid.Column="0"  Background="#D3D3D3" Content="View all Jobs" Command="{Binding ClickCommandview}"></Button>
+       
 
 
+
+        
 
     </Grid>
 </UserControl>

@@ -7,8 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="700">
     <Grid>
-        <Button x:Name="button1" Content="View All" HorizontalAlignment="Left" Height="22" Margin="569,354,0,0" VerticalAlignment="Top" Width="92" Click="button1_Click" />
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="326" Margin="76,10,0,0" VerticalAlignment="Top" Width="497"/>
+        <Button x:Name="button1" Content="View All" HorizontalAlignment="Left" Height="22" Margin="472,355,0,0" VerticalAlignment="Top" Width="92" Command="{Binding ClickCommandShowJobs}"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="192" Margin="-50,158,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding JobList}">
+            
+            
+        </DataGrid>
 
     </Grid>
 </UserControl>

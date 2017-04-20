@@ -35,12 +35,12 @@
 
         
         
-        <ContentControl Grid.Column="1" Content="{Binding CurrentViewModel}"></ContentControl>
+        <ContentControl Grid.Column="1" Width="600" Margin="-100" Content="{Binding CurrentViewModel}"></ContentControl>
 
-      
 
-      
-        <Rectangle Width="250" Height="Auto" Margin="-320,-55,0,0">
+
+
+        <Rectangle Grid.Column="0" Margin="-320,-55,0,0" Width="250" Height="Auto">
 
             <Rectangle.Fill>
                 <SolidColorBrush Color="#D3D3D3" />
@@ -49,14 +49,13 @@
         </Rectangle>
 
 
-        <Button BorderThickness="0" Width="250" Margin="-320,-720,0,0" Grid.Column="0"  Height="30" Background="#D3D3D3" Content="Create Job" Command="{Binding CreateJobCommand}"></Button>
+        <Button BorderThickness="0" Margin="-320,-720,0,0" Width="250"  Grid.Column="0"  Height="30" Background="#D3D3D3" Content="Create Job" Command="{Binding CreateJobCommand}"></Button>
 
-        <Button BorderThickness="0" Width="250" Margin="-320,-620,0,0" Height="30" Grid.Column="0"  Background="#D3D3D3" Content="View all Jobs" Command="{Binding ClickCommandview}"></Button>
-       
-
+        <Button BorderThickness="0" Margin="-320,-620,0,0" Width="250"  Height="30" Grid.Column="0"  Background="#D3D3D3" Content="View all Jobs" Command="{Binding ClickCommandview}"></Button>
 
 
-        
 
+
+      
     </Grid>
 </UserControl>

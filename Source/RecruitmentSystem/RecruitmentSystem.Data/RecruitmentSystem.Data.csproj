@@ -51,20 +51,13 @@
   <ItemGroup>
     <Compile Include="Candidate.cs" />
     <Compile Include="Comment.cs" />
+    <Compile Include="Inbox.cs" />
     <Compile Include="Interviewer.cs" />
     <Compile Include="InterviewStage.cs" />
     <Compile Include="Job.cs" />
-    <Compile Include="Migrations\201704040453302_new.cs" />
-    <Compile Include="Migrations\201704040453302_new.Designer.cs">
-      <DependentUpon>201704040453302_new.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704040536513_aa.cs" />
-    <Compile Include="Migrations\201704040536513_aa.Designer.cs">
-      <DependentUpon>201704040536513_aa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704060432579_aa1.cs" />
-    <Compile Include="Migrations\201704060432579_aa1.Designer.cs">
-      <DependentUpon>201704060432579_aa1.cs</DependentUpon>
+    <Compile Include="Migrations\201704241150471_ABC.cs" />
+    <Compile Include="Migrations\201704241150471_ABC.Designer.cs">
+      <DependentUpon>201704241150471_ABC.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,14 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704040453302_new.resx">
-      <DependentUpon>201704040453302_new.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704040536513_aa.resx">
-      <DependentUpon>201704040536513_aa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704060432579_aa1.resx">
-      <DependentUpon>201704060432579_aa1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704241150471_ABC.resx">
+      <DependentUpon>201704241150471_ABC.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

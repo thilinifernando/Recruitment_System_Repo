@@ -20,11 +20,13 @@ namespace RecruitmentSystem.API.Controllers
             {
                 return BadRequest(ModelState);
             }
+          //  Skill stud = new Skill() { SkillID = request.SkillID, Create_User_ID = 1, CreateDate = DateTime.Now };
 
             db.Skills.Add(new Skill() { JobId = skill.Job_JobID, SkillType = skill.SkillType });
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = skill.SkillID }, skill);
         }
+
     }
 }

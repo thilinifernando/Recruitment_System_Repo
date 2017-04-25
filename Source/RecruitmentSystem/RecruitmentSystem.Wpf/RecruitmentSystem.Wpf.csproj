@@ -42,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +62,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\AddSkillsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\JobListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -81,11 +86,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModel\AddSkillsViewModel.cs" />
     <Compile Include="ViewModel\Common\IPageViewModel.cs" />
     <Compile Include="ViewModel\Common\ObservableObject.cs" />
     <Compile Include="ViewModel\Common\RelayCommand.cs" />
     <Compile Include="ViewModel\JobListViewModel.cs" />
     <Compile Include="ViewModel\JobOpeningFormViewModel.cs" />
+    <Compile Include="View\AddSkillsView.xaml.cs">
+      <DependentUpon>AddSkillsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\JobListView.xaml.cs">
       <DependentUpon>JobListView.xaml</DependentUpon>
     </Compile>

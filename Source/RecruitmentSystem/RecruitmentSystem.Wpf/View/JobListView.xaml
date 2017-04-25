@@ -4,14 +4,54 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RecruitmentSystem.Wpf.View"
+             xmlns:vm2="clr-namespace:RecruitmentSystem.Wpf.ViewModel"
+             xmlns:view2="clr-namespace:RecruitmentSystem.Wpf.View"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="700">
+
+
+    
+
+
     <Grid>
-        <Button x:Name="button1" Content="View All" HorizontalAlignment="Left" Height="22" Margin="472,355,0,0" VerticalAlignment="Top" Width="92" Command="{Binding ClickCommandShowJobs}"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="192" Margin="-50,158,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding JobList}">
+        <Button x:Name="button1" Content="View All" HorizontalAlignment="Left" Height="22" Margin="505,158,0,0" VerticalAlignment="Top" Width="92" Command="{Binding ClickCommandShowJobs}"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="192" Margin="-200,158,0,0" VerticalAlignment="Top" Width="680" ItemsSource="{Binding Path = JobList}" SelectedItem="{Binding Path=SelectedJob, Mode=TwoWay}">
             
-            
+
+            <!--<Label Name="xxx" Content="{Binding SelectedEmployee}"></Label>-->
+
+            <!--<DataGridHyperlinkColumn Header="Email"/>-->
+
+            <DataGrid.Columns>
+                
+
+                <DataGridTemplateColumn Header=" ">
+            <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                            <Button Content="Add Skills" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.CommandAddSkills}"  CommandParameter="JobSelected"/>
+                </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+                
+                <!--<DataGridTextColumn Binding="{Binding Path=JobID}" Header="JobID"/>-->
+                <!--<DataGridTextColumn Binding="{Binding Path=FamilyName}" Header="FamilyName"/>-->
+                
+                
+            </DataGrid.Columns>
+
+
+
+
         </DataGrid>
 
+
+
+        <!--<TextBox   Width="100" Height="60" Name="txt_JobID" Text ="{Binding Path= r}" Margin="500,290,0,50" />-->
+
+        <!--<Label Content="{Binding Path= JobSelected}" />-->
+    
+
     </Grid>
+
+
 </UserControl>

@@ -27,10 +27,13 @@ namespace RecruitmentSystem.Wpf.ViewModel
         // public string Name { get; set; }
         private ICommand clickCommand2;
 
-        public JobOpeningFormViewModel()
+
+
+        public JobOpeningFormViewModel(JobOpeningViewModel jobOpeningViewModel)
         {
             clickCommand2 = new RelayCommand(ShowMessage, param => true);
             IsFrameVisible = false;
+            this.jobOpeningViewModel = jobOpeningViewModel;
         }
 
         public IPageViewModel CurrentViewModel1 { get; set; }
@@ -38,24 +41,9 @@ namespace RecruitmentSystem.Wpf.ViewModel
 
         
         public string Name { get; set; }
+        
         /// <summary>
-        /// ///////////////////////////////////////////////////////////////////////////
-        /// </summary>
-        //public string UserName
-        //{
-        //    get { return this.userName; }
-        //    set
-        //    {
-        //        // Implement with property changed handling for INotifyPropertyChanged
-        //        if (!string.Equals(this.userName, value))
-        //        {
-        //            this.userName = value;
-        //            this.RaisePropertyChanged(); // Method to raise the PropertyChanged event in your BaseViewModel class...
-        //        }
-        //    }
-        //}
-        /// <summary>
-        /// ///////////////////////////////////////////////////////////////////////////////////////
+        /// ////////////////////////////////////////////////
         /// </summary>
 
         public ICommand ClickCommand2
@@ -71,6 +59,8 @@ namespace RecruitmentSystem.Wpf.ViewModel
         }
 
         private bool _isFrameVisible;
+        private JobOpeningViewModel jobOpeningViewModel;
+
         public bool IsFrameVisible
         {
             get
@@ -86,9 +76,12 @@ namespace RecruitmentSystem.Wpf.ViewModel
         //public bool MyProperty { get; set; }
 
        
-        public IPageViewModel CurrentViewModel { get; set; }
+        public IPageViewModel CurrentViewModel { get ; set; }
 
         public string UserName { get; set; }
+
+
+
         public async void ShowMessage(object obj)
         {
 

@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="RecruitmentSystem.Wpf.View.AddSkillsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RecruitmentSystem.Wpf.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+
+
+        <Label FontSize="20" FontWeight="Bold" Margin="-350,-300,200,186" Width="100" Height="60" >Job Title</Label>
+        <Label FontSize="20" FontWeight="Bold" Content="{Binding Path=JobTitle}"  Width="400" Height="60" Margin="100,-300,200,186"/>
+
+        <Label Margin="-350,-200,200,186" Width="100" Height="40">Skill Type</Label>
+        <TextBox  Margin="20,-200,200,186" Width="200" Height="30" Name="txt_JobTitle" Text="{Binding skilltype}"/>
+
+        <Label Margin="-350,-100,200,186" Width="100" Height="40">Skill Description</Label>
+        <TextBox Width="200" Margin="20,-10,200,186" Height="100" TextWrapping="Wrap"/>
+        <Button Height="30"  Margin="-80,180,200,186" Width="80" Content="Save"></Button>
+
+
+        <!--<TextBox  Margin="100,165,0,75" Width="200" Height="60" Name="txt_JobID" Text ="{Binding JobID}"/>-->
+        <!--<Label Content="{Binding Path=JobSelected}"/>-->
+
+        <!--<Button Grid.Row="1"  Height="30" Margin="400,0,0,10" Width="100" Content="Save" Command="{Binding ClickCommandAddSkills}"></Button>-->
+        
+    </Grid>
+</UserControl>

@@ -6,15 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using RecruitmentSystem.Dto;
 using System.Windows;
-using RecruitmentSystem.Dto;
 using System.Net.Http;
 using System.Windows.Input;
-
-
-
-
-
-
+using System.Collections.ObjectModel;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace RecruitmentSystem.Wpf.ViewModel
 {
@@ -22,6 +18,8 @@ namespace RecruitmentSystem.Wpf.ViewModel
     {
 
         private ICommand clickCommandAddSkills;
+
+       
         public string Name { get; set; }
 
         public string JobTitle { get; set; }
@@ -31,13 +29,14 @@ namespace RecruitmentSystem.Wpf.ViewModel
         public AddSkillsViewModel()
         {
 
-            clickCommandAddSkills = new RelayCommand(AddSkillsForm, param => true);
-           
-    }
+            clickCommandAddSkills = new RelayCommand(Sample,  param => true);
+            //clickCommandAddSkillsNew = new RelayCommand(ShowMessageViewSkills, param => true);
+
+        }
 
 
-   
-    public ICommand ClickCommandAddSkills
+
+        public ICommand ClickCommandAddSkills
         {
             get
             {
@@ -48,8 +47,21 @@ namespace RecruitmentSystem.Wpf.ViewModel
                 clickCommandAddSkills = value;
             }
         }
+
+      
         public string skilltype { get; set; }
-       // public int jobid { get; set; }
+        public string description { get; set; }
+        // public int jobid { get; set; }
+
+
+        public void Sample(object obj)
+        {
+
+            AddSkillsForm(obj);
+            ShowMessageViewSkills(obj);
+
+
+        }
 
 
         public async void AddSkillsForm(object obj)
@@ -64,7 +76,9 @@ namespace RecruitmentSystem.Wpf.ViewModel
 
             {
                 SkillType = skilltype,
-              
+                Description = description,
+                Job_JobID = JobID
+
 
 
 
@@ -76,22 +90,92 @@ namespace RecruitmentSystem.Wpf.ViewModel
 
             var response = await httpClient.PostAsync(url, new StringContent(json, Encoding.UTF8, "application/json"));
 
-        
 
 
 
-            // response.EnsureSuccessStatusCode();
+
+
+            response.EnsureSuccessStatusCode();
             if (response.IsSuccessStatusCode)
             {
-                // Handle success
+               
             }
             else
             {
-                // Handle failure
+            
             }
 
             MessageBox.Show("Saved");
+
+
         }
+
+        private ObservableCollection<AddSkillResponse> skillList;
+      
+        public ObservableCollection<AddSkillResponse> SkillList
+        {
+            get
+            {
+                return skillList;
+            }
+            set
+            {
+                skillList = value;
+                RaisePropertyChangedEvent("skillList");
+
+            }
+
+
+        }
+
+        //////////////////////////////////////////////////////
+
+
+        private async void ShowMessageViewSkills(object obj)
+        {
+            //   JobList = new ObservableCollection<CreateJobResponseDto>(new List<CreateJobResponseDto> {new CreateJobResponseDto {
+            //   CreateDate = DateTime.Now, JobID = 1, JobTitle="tesst"} });
+
+
+            HttpClient client = new HttpClient();
+
+            client.BaseAddress = new Uri("http://localhost:58917");
+
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync("/api/Skills");
+
+                response.EnsureSuccessStatusCode();
+
+                var responseAsString = await response.Content.ReadAsStringAsync();
+
+
+                SkillList = new ObservableCollection<AddSkillResponse>(
+                    JsonConvert.DeserializeObject<List<AddSkillResponse>>(responseAsString));
+
+
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error");
+            }
+        }
+
+
     }
 
+
 }
+
+
+
+
+
+
+
+
+

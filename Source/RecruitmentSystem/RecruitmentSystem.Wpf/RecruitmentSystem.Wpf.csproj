@@ -66,6 +66,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Invox_User_Client.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\JobListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -90,10 +94,14 @@
     <Compile Include="ViewModel\Common\IPageViewModel.cs" />
     <Compile Include="ViewModel\Common\ObservableObject.cs" />
     <Compile Include="ViewModel\Common\RelayCommand.cs" />
+    <Compile Include="ViewModel\Invox_User_ClientViewModel.cs" />
     <Compile Include="ViewModel\JobListViewModel.cs" />
     <Compile Include="ViewModel\JobOpeningFormViewModel.cs" />
     <Compile Include="View\AddSkillsView.xaml.cs">
       <DependentUpon>AddSkillsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Invox_User_Client.xaml.cs">
+      <DependentUpon>Invox_User_Client.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\JobListView.xaml.cs">
       <DependentUpon>JobListView.xaml</DependentUpon>

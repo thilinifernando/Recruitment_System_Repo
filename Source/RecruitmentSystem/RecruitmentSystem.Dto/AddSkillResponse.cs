@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace RecruitmentSystem.Dto
 {
-   public class AddSkillRequest
+   public   class AddSkillResponse
     {
+
         public int SkillID { get; set; }
         public String SkillType { get; set; }
         public int Job_JobID { get; set; }
@@ -18,7 +19,6 @@ namespace RecruitmentSystem.Dto
         public string Qualification { get; set; }
 
         public int Parent_ID { get; set; }
-
 
     }
 }

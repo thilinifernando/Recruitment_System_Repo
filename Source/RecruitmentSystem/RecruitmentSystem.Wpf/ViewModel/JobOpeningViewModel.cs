@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,11 +23,10 @@ namespace RecruitmentSystem.Wpf.ViewModel
             createJobCommand = new RelayCommand(ShowJobOpeningForm, param => true);
             jobListviewCommand = new RelayCommand(ShowJobListView, param => true);
 
-            CurrentViewModel = new JobOpeningFormViewModel();
+            jobOpeningFormViewModel = new JobOpeningFormViewModel(this);
+            jobListViewModel = new JobListViewModel(this);
 
-
-            jobOpeningFormViewModel = new JobOpeningFormViewModel();
-            jobListViewModel = new JobListViewModel();
+            CurrentViewModel = jobOpeningFormViewModel;
 
         }
 

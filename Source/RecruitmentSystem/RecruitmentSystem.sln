@@ -1,7 +1,6 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recruitment Systeam.API", "RecruitmentSystem.Api\Recruitment Systeam.API.csproj", "{DF5CABC7-BC7B-4DB1-84D7-450D72FD1085}"
 EndProject
@@ -10,8 +9,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruitmentSystem.Wpf", "RecruitmentSystem.Wpf\RecruitmentSystem.Wpf.csproj", "{5C544C64-D235-4C78-9504-BEA0D81E343B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruitmentSystem.Dto", "RecruitmentSystem.Dto\RecruitmentSystem.Dto.csproj", "{E9DD1A06-BE35-4276-9411-1EC3EF79DE5D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "receiveemail", "..\..\..\receiveemail\receiveemail\receiveemail.csproj", "{A11DE571-0A88-472C-BCCB-12864CF0728F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +32,6 @@ Global
 		{E9DD1A06-BE35-4276-9411-1EC3EF79DE5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9DD1A06-BE35-4276-9411-1EC3EF79DE5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9DD1A06-BE35-4276-9411-1EC3EF79DE5D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A11DE571-0A88-472C-BCCB-12864CF0728F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A11DE571-0A88-472C-BCCB-12864CF0728F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A11DE571-0A88-472C-BCCB-12864CF0728F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A11DE571-0A88-472C-BCCB-12864CF0728F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

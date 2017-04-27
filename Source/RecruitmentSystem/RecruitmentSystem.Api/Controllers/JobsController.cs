@@ -1,4 +1,3 @@
-﻿
 using RecruitmentSystem.Data;
 using RecruitmentSystem.Data.Repositories;
 using RecruitmentSystem.Dto;
@@ -56,10 +55,14 @@ namespace RecruitmentSysteam.API.Controllers
 
             return
                 _repository.GetIDDetails().Select(t => new CreateJobResponseDto { JobID = t.JobID, JobTitle = t.JobTitle , CreateDate = t.CreateDate });
+
+                //_repository.GetIDDetails().Select(t => new CreateJobResponseDto { JobID = t.JobID, JobTitle = t.JobTitle, CreateDate = t.CreateDate });
+
         }
 
 
+
+        
+
     }
 }
-//var userProfiles = _dataContext.UserProfile
-                        //       .Where(t => idList.Contains(t.Id));

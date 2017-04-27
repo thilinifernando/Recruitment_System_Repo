@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +15,17 @@ namespace RecruitmentSystem.Data
         //Foreign key
         public int JobId { get; set; }
         public virtual Job Job { get; set; }
+
+
+        public string Description { get; set; }
+
+        public string Qualification { get; set; }
+
+        public int Parent_ID { get; set; }
+
+
+
+
 
 
     }

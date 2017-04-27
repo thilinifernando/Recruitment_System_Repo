@@ -85,10 +85,7 @@ namespace RecruitmentSystem.Wpf.ViewModel
         public async void ShowMessage(object obj)
         {
 
-
-
-
-            var url = "http://localhost:58917/api/Jobs";
+         var url = "http://localhost:58917/api/Jobs";
 
             var data = new CreateJobRequestDto()
 

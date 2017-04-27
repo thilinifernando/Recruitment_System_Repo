@@ -57,7 +57,7 @@ namespace RecruitmentSysteam.API.Controllers
             return
                 _repository.GetIDDetails().Select(t => new CreateJobResponseDto { JobID = t.JobID, JobTitle = t.JobTitle , CreateDate = t.CreateDate });
 
-                //_repository.GetIDDetails().Select(t => new CreateJobResponseDto { JobID = t.JobID, JobTitle = t.JobTitle, CreateDate = t.CreateDate });
+              
 
         }
 

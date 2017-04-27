@@ -6,20 +6,42 @@
              xmlns:local="clr-namespace:RecruitmentSystem.Wpf.View"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibility" />
+    </UserControl.Resources>
+
     <Grid>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="68*" />
+      </Grid.RowDefinitions>
 
-        <Label FontSize="20" FontWeight="Bold" Margin="-350,-300,200,186" Width="100" Height="60" >Job Title</Label>
-        <Label FontSize="20" FontWeight="Bold" Content="{Binding Path=JobTitle}"  Width="400" Height="60" Margin="100,-300,200,186"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*" />
+            <ColumnDefinition Width="30*" />
+            <ColumnDefinition Width="20*" />
+            <ColumnDefinition Width="20*" />
+            <ColumnDefinition Width="15*" />
 
-        <Label Margin="-350,-200,200,186" Width="100" Height="40">Skill Type</Label>
-        <TextBox  Margin="20,-200,200,186" Width="200" Height="30" Name="txt_JobTitle" Text="{Binding skilltype}"/>
+        </Grid.ColumnDefinitions>
 
-        <Label Margin="-350,-100,200,186" Width="100" Height="40">Skill Description</Label>
-        <TextBox Width="200" Margin="20,-10,200,186" Height="100" TextWrapping="Wrap" Text="{Binding description}"/>
-        <Button Height="30"  Margin="-80,180,200,186" Width="80" Content="Add" Command="{Binding ClickCommandAddSkills}"></Button>
 
-        <DataGrid x:Name="dataGridSkills" HorizontalAlignment="Left" Height="192" Margin="-200,500,0,0" VerticalAlignment="Top" Width="680" ItemsSource="{Binding Path = SkillList}" SelectedItem="{Binding Path=SelectedJob, Mode=TwoWay}">
+        <Label FontSize="20"  VerticalAlignment="Bottom" FontWeight="Bold" Grid.Row="0" Grid.Column="1" Width="Auto" Height="Auto" >Job Title</Label>
+        <Label FontSize="20" FontWeight="Bold" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="2" Content="{Binding Path=JobTitle}"  Height="Auto"/>
+
+        <Label  Width="Auto"  Grid.Column="1" Grid.Row="1" Height="Auto">Skill Type</Label>
+        <TextBox   Width="Auto" Grid.Column="2" Height="Auto" Grid.Row="1" Name="txt_JobTitle" Text="{Binding skilltype}"/>
+
+        <Label  Width="Auto"  Grid.Row="2" Grid.Column="1" Height="Auto">Skill Description</Label>
+        <TextBox Width="Auto" Grid.Row="2"  Height="Auto" Grid.Column="2" TextWrapping="Wrap" Text="{Binding description}"/>
+        <Button Height="Auto" Grid.Row="3" Width="100" Grid.Column="2" HorizontalAlignment="Left" Content="Add" Command="{Binding ClickCommandAddSkills}"></Button>
+
+        <DataGrid x:Name="dataGridSkills" Grid.Row="5" Grid.ColumnSpan="5"  Height="Auto"  Width="Auto" ItemsSource="{Binding Path = SkillList}" SelectedItem="{Binding Path=SelectedJob, Mode=TwoWay}" Visibility="{Binding IsFrameVisible, Converter={StaticResource BoolToVisibility}}">
 
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header=" ">

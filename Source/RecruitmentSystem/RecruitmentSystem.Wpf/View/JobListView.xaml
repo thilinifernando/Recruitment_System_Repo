@@ -6,17 +6,38 @@
              xmlns:local="clr-namespace:RecruitmentSystem.Wpf.View"
              xmlns:vm2="clr-namespace:RecruitmentSystem.Wpf.ViewModel"
              xmlns:view2="clr-namespace:RecruitmentSystem.Wpf.View"
-             mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="700">
+            mc:Ignorable="d" 
+        
+             d:DesignHeight="300" d:DesignWidth="300">
 
 
     
 
 
     <Grid>
-        <Button x:Name="button1" Content="View All" HorizontalAlignment="Left" Height="22" Margin="505,158,0,0" VerticalAlignment="Top" Width="92" Command="{Binding ClickCommandShowJobs}"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="192" Margin="-200,158,0,0" VerticalAlignment="Top" Width="680" ItemsSource="{Binding Path = JobList}" SelectedItem="{Binding Path=SelectedJob, Mode=TwoWay}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="90*" />
+           
+
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="80*" />
+            <ColumnDefinition Width="10*" />
+
+
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" FontWeight="Bold" FontSize="18" VerticalAlignment="Center"> View All Published jobs
+        </Label>
+        <Button x:Name="button1" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Content="View All"  Height="30" Width="100"  Command="{Binding ClickCommandShowJobs}"/>
+        <DataGrid x:Name="dataGrid"  Height="Auto" Width="Auto" Grid.Column="1"  Grid.Row="1" ItemsSource="{Binding Path = JobList}" SelectedItem="{Binding Path=SelectedJob, Mode=TwoWay}">
        
+            
+            
             <DataGrid.Columns>
             <DataGridTemplateColumn Header=" ">
             <DataGridTemplateColumn.CellTemplate>

@@ -4,38 +4,40 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RecruitmentSystem.Wpf.View"
-             mc:Ignorable="d" Height="369.545" Width="570">
+            mc:Ignorable="d" 
+        
+             d:DesignHeight="300" d:DesignWidth="300">
 
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisibility" />
     </UserControl.Resources>
-    <Grid Margin="0,-100">
-
-        <!--<Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="100" />
-        </Grid.ColumnDefinitions>-->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <!--<Label>Job ID</Label>
-        <TextBox Grid.Column="1" Margin="0,0,0,10" Width="200" Name="txt_JobID"/>-->
-        <Label Grid.Row="1">Job Title</Label>
-        <TextBox Grid.Row="1"  Margin="50,0,0,10" Width="200" Name="txt_JobTitle" Text="{Binding UserName}"/>
-
-        <Button Grid.Row="1"  Height="30" Margin="300,0,0,10" Width="100" Content="Save" Command="{Binding ClickCommand2}">
-            
-            
+    <Grid>
 
      
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="80*" />
+            
+        </Grid.RowDefinitions>
 
-        </Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*" />
+            <ColumnDefinition Width="30*" />
+            <ColumnDefinition Width="30*" />
+
+        </Grid.ColumnDefinitions>
 
 
-        <Frame Name="FrameWithinGrid" Grid.Row="2" Width="1000" Height="Auto" Margin="-100,0,0,0" Source="http://www.google.com" Visibility="{Binding IsFrameVisible, Converter={StaticResource BoolToVisibility}}" >
+        <!--<Label>Job ID</Label>
+        <TextBox Grid.Column="1" Margin="0,0,0,10" Width="200" Name="txt_JobID"/>-->
+        <Label Grid.Row="0" Height="30" Grid.Column="0" HorizontalAlignment="Center">Enter new Job Title</Label>
+        <TextBox Grid.Row="0" Grid.Column="1" Height="30" Width="Auto" Name="txt_JobTitle" Text="{Binding UserName}"/>
+
+        <Button Grid.Row="0" Grid.Column="2"  Height="30"  Width="100" Content="Save" Command="{Binding ClickCommand2}">
+         </Button>
+
+
+        <Frame Name="FrameWithinGrid" Grid.Row="1" Grid.ColumnSpan="3" Width="Auto" Height="Auto" Source="http://www.google.com" Visibility="{Binding IsFrameVisible, Converter={StaticResource BoolToVisibility}}" >
         <!--<Frame Name="FrameWithinGrid" Grid.Row="2" Width="1000" Height="Auto" Margin="-100,0,0,0" Source="{Binding MyProperty}">-->
             </Frame>
 

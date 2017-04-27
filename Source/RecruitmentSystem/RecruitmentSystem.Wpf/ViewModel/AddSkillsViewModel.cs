@@ -31,6 +31,7 @@ namespace RecruitmentSystem.Wpf.ViewModel
 
             clickCommandAddSkills = new RelayCommand(Sample,  param => true);
             //clickCommandAddSkillsNew = new RelayCommand(ShowMessageViewSkills, param => true);
+            IsFrameVisible = false;
 
         }
 
@@ -105,7 +106,8 @@ namespace RecruitmentSystem.Wpf.ViewModel
             
             }
 
-           // MessageBox.Show("Saved");
+           MessageBox.Show("Added");
+           IsFrameVisible = true;
 
 
         }
@@ -129,6 +131,24 @@ namespace RecruitmentSystem.Wpf.ViewModel
         }
 
         //////////////////////////////////////////////////////
+        private bool _isFrameVisible;
+        public bool IsFrameVisible
+        {
+            get
+            {
+                return _isFrameVisible;
+            }
+            set
+            {
+                _isFrameVisible = value;
+                RaisePropertyChangedEvent("IsFrameVisible");
+            }
+        }
+
+        /// <summary>
+        /// /////////
+        /// </summary>
+        /// <param name="obj"></param>
 
 
         private async void ShowMessageViewSkills(object obj)

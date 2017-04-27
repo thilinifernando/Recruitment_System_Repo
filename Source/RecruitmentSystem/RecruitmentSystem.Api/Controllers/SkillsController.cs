@@ -45,7 +45,7 @@ namespace RecruitmentSystem.API.Controllers
 
             return
 
-                 _repository.GetIDDetails().Select(t => new AddSkillResponse { SkillID = t.SkillID, SkillType = t.SkillType, Description = t.Description, Qualification = t.Qualification, Parent_ID = t.Parent_ID, Job_JobID = t.JobId
+                 _repository.GetIDDetails().Select(t => new AddSkillResponse { SkillID = t.SkillID, SkillType = t.SkillType, Description = t.Description, Qualification = t.Qualification
                  });
         }
 

@@ -13,12 +13,13 @@
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="8*" />
             <RowDefinition Height="5*" />
             <RowDefinition Height="10*" />
             <RowDefinition Height="5*" />
             <RowDefinition Height="2*" />
-            <RowDefinition Height="68*" />
+            <RowDefinition Height="65*" />
       </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -31,20 +32,20 @@
         </Grid.ColumnDefinitions>
 
 
-        <Label FontSize="20"  VerticalAlignment="Bottom" FontWeight="Bold" Grid.Row="0" Grid.Column="1" Width="Auto" Height="Auto" >Job Title</Label>
-        <Label FontSize="20" FontWeight="Bold" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="2" Content="{Binding Path=JobTitle}"  Height="Auto"/>
+        <Label FontSize="18"  VerticalAlignment="Bottom" FontWeight="Bold" Grid.Row="1" Grid.Column="1" Width="Auto" Height="Auto" >Add Skills For</Label>
+        <Label FontSize="18" FontWeight="Bold" VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="2" Content="{Binding Path=JobTitle}"  Height="Auto"/>
 
-        <Label  Width="Auto"  Grid.Column="1" Grid.Row="1" Height="Auto">Skill Type</Label>
-        <TextBox   Width="Auto" Grid.Column="2" Height="Auto" Grid.Row="1" Name="txt_JobTitle" Text="{Binding skilltype}"/>
+        <Label  Width="Auto"  Grid.Column="1" Grid.Row="2" Height="Auto">Skill Type</Label>
+        <TextBox   Width="Auto" Grid.Column="2" Height="Auto" Grid.Row="2" Name="txt_JobTitle" Text="{Binding skilltype}"/>
 
-        <Label  Width="Auto"  Grid.Row="2" Grid.Column="1" Height="Auto">Skill Description</Label>
-        <TextBox Width="Auto" Grid.Row="2"  Height="Auto" Grid.Column="2" TextWrapping="Wrap" Text="{Binding description}"/>
-        <Button Height="Auto" Grid.Row="3" Width="100" Grid.Column="2" HorizontalAlignment="Left" Content="Add" Command="{Binding ClickCommandAddSkills}"></Button>
+        <Label  Width="Auto"  Grid.Row="3" Grid.Column="1" Height="Auto">Skill Description</Label>
+        <TextBox Width="Auto" Grid.Row="3"  Height="Auto" Grid.Column="2" TextWrapping="Wrap" Text="{Binding description}"/>
+        <Button Height="Auto" Grid.Row="4" Width="100" Grid.Column="2" HorizontalAlignment="Left" Content="Add" Command="{Binding ClickCommandAddSkills}"></Button>
 
-        <DataGrid x:Name="dataGridSkills" Grid.Row="5" Grid.ColumnSpan="5"  Height="Auto"  Width="Auto" ItemsSource="{Binding Path = SkillList}" SelectedItem="{Binding Path=SelectedJob, Mode=TwoWay}" Visibility="{Binding IsFrameVisible, Converter={StaticResource BoolToVisibility}}">
+        <DataGrid x:Name="dataGridSkills" Grid.Row="6" Grid.ColumnSpan="5" Height="Auto"  Width="Auto" ItemsSource="{Binding Path = SkillList}" SelectedItem="{Binding Path=SelectedJob, Mode=TwoWay}" Visibility="{Binding IsFrameVisible, Converter={StaticResource BoolToVisibility}}">
 
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header=" ">
+                <DataGridTemplateColumn Header=" " >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Edit" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.CommandAddSkills}"  CommandParameter="JobSelected"/>
@@ -53,6 +54,11 @@
                 </DataGridTemplateColumn>
 
             </DataGrid.Columns>
+
+          
+
+
+
         </DataGrid>
 
     </Grid>

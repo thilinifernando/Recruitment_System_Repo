@@ -15,6 +15,8 @@ namespace RecruitmentSystem.Data
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Candidate> Candidates { get; set; }
         public DbSet<Skill> Skills { get; set; }
+        public DbSet <Inbox> Inboxes{ get; set; }
+
 
     }
 }

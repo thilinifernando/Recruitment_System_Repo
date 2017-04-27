@@ -11,6 +11,15 @@ using System.Net.Http.Headers;
 using RecruitmentSystem.Dto;
 using System.Windows;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Data;
+using System.Collections;
+//using System.Windows.Controls;
+//using System.Windows.Forms;
+using System.Web.UI.WebControls;
+using System.Web;
+using System.ComponentModel;
+//using System.Windows.Forms;
 
 namespace RecruitmentSystem.Wpf.ViewModel
 {
@@ -18,13 +27,25 @@ namespace RecruitmentSystem.Wpf.ViewModel
     {
 
         private ICommand clickCommandShowJobs;
+        private ICommand commandAddSkills;
+
         public string Name { get; set; }
 
-        public JobListViewModel()
+     
+
+
+        public JobListViewModel(JobOpeningViewModel jobOpeningViewModel)
         {
             clickCommandShowJobs = new RelayCommand(ShowMessageViewJobs, param => true);
-            //IsFrameVisible = false;
+            commandAddSkills = new RelayCommand(AddSkills, param => true);
+            this.jobOpeningViewModel = jobOpeningViewModel;
+            ////////////////////////////////////////////////////////////////////////////////
+
+            
+
         }
+      
+
         public ICommand ClickCommandShowJobs
         {
             get
@@ -34,12 +55,30 @@ namespace RecruitmentSystem.Wpf.ViewModel
             set
             {
                 clickCommandShowJobs = value;
-
-                RaisePropertyChangedEvent("ClickCommandShowJobs");
             }
         }
+        /// <summary>
+        /// ///////////////////////////////////////////////////////////////////////////
+        /// </summary>
+
+        public ICommand CommandAddSkills
+        {
+            get
+            {
+                return commandAddSkills;
+            }
+            set
+            {
+                commandAddSkills = value;
+            }
+        }
+/// <summary>
+/// //////////////////////////////////////////////////////////////////////////////
+/// </summary>
 
         private ObservableCollection<CreateJobResponseDto> jobList;
+        private JobOpeningViewModel jobOpeningViewModel;
+       // private object dataGrid;
 
         public ObservableCollection<CreateJobResponseDto> JobList
         {
@@ -51,9 +90,34 @@ namespace RecruitmentSystem.Wpf.ViewModel
             {
                 jobList = value;
                 RaisePropertyChangedEvent("JobList");
+               
             }
+
+           
         }
 
+       
+
+        public void AddSkills(object obj)
+        {
+            
+            jobOpeningViewModel.CurrentViewModel = new AddSkillsViewModel() { JobTitle = SelectedJob.JobTitle, JobID = SelectedJob.JobID};
+            //JobSelected = SelectedJob.JobID;
+            
+
+        }
+
+        //int r = JobSelected;
+
+         
+
+        public CreateJobResponseDto SelectedJob { get; set; }
+
+       
+        /// <summary>
+        /// //////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// </summary>
+        /// <param name="obj"></param>
         private async void ShowMessageViewJobs(object obj)
         {
             //JobList = new ObservableCollection<CreateJobResponseDto>(new List<CreateJobResponseDto> {new CreateJobResponseDto {
@@ -89,7 +153,7 @@ namespace RecruitmentSystem.Wpf.ViewModel
                 MessageBox.Show("Error");
             }
         }
-            //throw new NotImplementedException();
+          
     }
 
        

@@ -3,7 +3,7 @@ namespace RecruitmentSystem.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class _new : DbMigration
+    public partial class booma : DbMigration
     {
         public override void Up()
         {
@@ -29,7 +29,6 @@ namespace RecruitmentSystem.Data.Migrations
                         JobTitle = c.String(),
                         Create_User_ID = c.Int(nullable: false),
                         CreateDate = c.DateTime(nullable: false),
-                        ReferenceID = c.String(),
                     })
                 .PrimaryKey(t => t.JobID);
             
@@ -47,32 +46,19 @@ namespace RecruitmentSystem.Data.Migrations
                 .Index(t => t.JobId);
             
             CreateTable(
-                "dbo.Interviewers",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        Email = c.String(),
-                        Title = c.String(),
-                        InterviewStage_Id = c.Int(),
-                    })
-                .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.InterviewStages", t => t.InterviewStage_Id)
-                .Index(t => t.InterviewStage_Id);
-            
-            CreateTable(
                 "dbo.Skills",
                 c => new
                     {
                         SkillID = c.Int(nullable: false, identity: true),
                         SkillType = c.String(),
                         JobId = c.Int(nullable: false),
-                        InterviewStage_Id = c.Int(),
+                        Description = c.String(),
+                        Qualification = c.String(),
+                        Parent_ID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.SkillID)
                 .ForeignKey("dbo.Jobs", t => t.JobId, cascadeDelete: true)
-                .ForeignKey("dbo.InterviewStages", t => t.InterviewStage_Id)
-                .Index(t => t.JobId)
-                .Index(t => t.InterviewStage_Id);
+                .Index(t => t.JobId);
             
             CreateTable(
                 "dbo.Comments",
@@ -93,6 +79,16 @@ namespace RecruitmentSystem.Data.Migrations
                 .Index(t => t.CommentedBy_ID)
                 .Index(t => t.Stage_Id);
             
+            CreateTable(
+                "dbo.Interviewers",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Email = c.String(),
+                        Title = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
         }
         
         public override void Down()
@@ -101,21 +97,17 @@ namespace RecruitmentSystem.Data.Migrations
             DropForeignKey("dbo.Comments", "CommentedBy_ID", "dbo.Interviewers");
             DropForeignKey("dbo.Comments", "Candidate_ID", "dbo.Candidates");
             DropForeignKey("dbo.Candidates", "Job_JobID", "dbo.Jobs");
-            DropForeignKey("dbo.Skills", "InterviewStage_Id", "dbo.InterviewStages");
             DropForeignKey("dbo.Skills", "JobId", "dbo.Jobs");
             DropForeignKey("dbo.InterviewStages", "JobId", "dbo.Jobs");
-            DropForeignKey("dbo.Interviewers", "InterviewStage_Id", "dbo.InterviewStages");
             DropIndex("dbo.Comments", new[] { "Stage_Id" });
             DropIndex("dbo.Comments", new[] { "CommentedBy_ID" });
             DropIndex("dbo.Comments", new[] { "Candidate_ID" });
-            DropIndex("dbo.Skills", new[] { "InterviewStage_Id" });
             DropIndex("dbo.Skills", new[] { "JobId" });
-            DropIndex("dbo.Interviewers", new[] { "InterviewStage_Id" });
             DropIndex("dbo.InterviewStages", new[] { "JobId" });
             DropIndex("dbo.Candidates", new[] { "Job_JobID" });
+            DropTable("dbo.Interviewers");
             DropTable("dbo.Comments");
             DropTable("dbo.Skills");
-            DropTable("dbo.Interviewers");
             DropTable("dbo.InterviewStages");
             DropTable("dbo.Jobs");
             DropTable("dbo.Candidates");

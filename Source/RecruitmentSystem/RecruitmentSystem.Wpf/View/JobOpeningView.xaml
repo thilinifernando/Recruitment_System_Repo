@@ -16,6 +16,9 @@
             <view2:JobListView />
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type vm2:AddSkillsViewModel}">
+            <view2:AddSkillsView />
+        </DataTemplate>
     </UserControl.Resources>
     
     <Grid>

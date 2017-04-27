@@ -17,5 +17,16 @@ namespace RecruitmentSystem.Data
         public virtual Job Job { get; set; }
 
 
+        public string Description { get; set; }
+
+        public string Qualification { get; set; }
+
+        public int Parent_ID { get; set; }
+
+
+
+
+
+
     }
 }

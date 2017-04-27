@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AddInterviewStage.cs" />
     <Compile Include="AddSkillRequest.cs" />
+    <Compile Include="AddSkillResponse.cs" />
     <Compile Include="CreateJobRequest.cs" />
     <Compile Include="CreateJobResponse.cs" />
     <Compile Include="JobDto.cs" />

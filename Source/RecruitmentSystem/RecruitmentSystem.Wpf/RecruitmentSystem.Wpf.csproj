@@ -62,6 +62,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\AddSkillsForJobView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AddSkillsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -90,6 +94,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModel\AddSkillsForJobViewModel.cs" />
     <Compile Include="ViewModel\AddSkillsViewModel.cs" />
     <Compile Include="ViewModel\Common\IPageViewModel.cs" />
     <Compile Include="ViewModel\Common\ObservableObject.cs" />
@@ -97,6 +102,9 @@
     <Compile Include="ViewModel\Invox_User_ClientViewModel.cs" />
     <Compile Include="ViewModel\JobListViewModel.cs" />
     <Compile Include="ViewModel\JobOpeningFormViewModel.cs" />
+    <Compile Include="View\AddSkillsForJobView.xaml.cs">
+      <DependentUpon>AddSkillsForJobView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AddSkillsView.xaml.cs">
       <DependentUpon>AddSkillsView.xaml</DependentUpon>
     </Compile>

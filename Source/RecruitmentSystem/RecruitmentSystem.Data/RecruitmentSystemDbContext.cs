@@ -16,5 +16,7 @@ namespace RecruitmentSystem.Data
         public DbSet<Candidate> Candidates { get; set; }
         public DbSet<Skill> Skills { get; set; }
 
+        public DbSet<NewSkill> NewSkills { get; set; }
+
     }
 }

@@ -6,20 +6,19 @@ using System.Threading.Tasks;
 
 namespace RecruitmentSystem.Data.Repositories
 {
-    public class SkillsRepository : ISkillsRepository
+   public class NewSkillsRepository : INewSkillsRepository
     {
-        public SkillsRepository()
+        public NewSkillsRepository()
         {
 
-        }
 
-        public IEnumerable<Skill> GetIDDetails()
+        }
+        public IEnumerable<NewSkill> GetIDDetails()
         {
 
             var ctx = new RecruitmentSystemDbContext();
-            return ctx.Skills.ToList();
+            return ctx.NewSkills.ToList();
 
         }
-
     }
 }

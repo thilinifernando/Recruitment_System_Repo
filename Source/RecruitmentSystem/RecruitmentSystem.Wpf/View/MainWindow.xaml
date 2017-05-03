@@ -56,11 +56,11 @@
             <Rectangle Grid.Row="1"  Fill="#1e90ff" />
 
             <TabControl Grid.Row="1" Width="Auto" >
-                    <TabItem Header="Job Opening" Width="100" Height="30" Background="#1e90ff" Foreground="White"/>
-                    <TabItem Header="Inbox" Width="100" Height="30" Background="#1e90ff" Foreground="White"/>
-                    <TabItem Header="Interview Process" Width="100" Height="30" Background="#1e90ff" Foreground="White" />
-                    <TabItem Header="Candidates" Width="100" Height="30" Background="#1e90ff" Foreground="White"/>
-                    <TabItem Header="Basic Data" Width="100" Height="30" Background="#1e90ff" Foreground="White"/>
+            <TabItem Header="Job Opening" Width="120" Height="30" Background="#1e90ff" Foreground="White"/>
+            <TabItem Header="Inbox" Width="120" Height="30" Background="#1e90ff" Foreground="White"/>
+            <TabItem Header="Interview Process" Width="120" Height="30" Background="#1e90ff" Foreground="White" />
+            <TabItem Header="Candidates" Width="120" Height="30" Background="#1e90ff" Foreground="White"/>
+            <TabItem Header="Basic Data" Width="120" Height="30" Background="#1e90ff" Foreground="White"/>
                 </TabControl>
 
          <ContentControl Grid.Row="2" Content="{Binding CurrentViewModel}"></ContentControl>

@@ -31,7 +31,9 @@ namespace RecruitmentSystem.Wpf.ViewModel
 
         public string Name { get; set; }
 
-     
+       
+
+
 
 
         public JobListViewModel(JobOpeningViewModel jobOpeningViewModel)
@@ -100,15 +102,15 @@ namespace RecruitmentSystem.Wpf.ViewModel
 
         public void AddSkills(object obj)
         {
-            
-            jobOpeningViewModel.CurrentViewModel = new AddSkillsViewModel() { JobTitle = SelectedJob.JobTitle, JobID = SelectedJob.JobID};
-            //JobSelected = SelectedJob.JobID;
-            
+
+            //jobOpeningViewModel.CurrentViewModel = new AddSkillsViewModel() { JobTitle = SelectedJob.JobTitle, JobID = SelectedJob.JobID};
+
+            jobOpeningViewModel.CurrentViewModel = new AddSkillsForJobViewModel(obj) { JobTitle = SelectedJob.JobTitle, JobID = SelectedJob.JobID };
+
 
         }
 
-        //int r = JobSelected;
-
+       
          
 
         public CreateJobResponseDto SelectedJob { get; set; }

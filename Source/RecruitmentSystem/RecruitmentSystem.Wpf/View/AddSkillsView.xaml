@@ -42,7 +42,7 @@
         <TextBox Width="Auto" Grid.Row="3"  Height="Auto" Grid.Column="2" TextWrapping="Wrap" Text="{Binding description}"/>
         <Button Height="Auto" Grid.Row="4" Width="100" Grid.Column="2" HorizontalAlignment="Left" Content="Add" Command="{Binding ClickCommandAddSkills}"></Button>
 
-        <DataGrid x:Name="dataGridSkills" Grid.Row="6" Grid.ColumnSpan="5" Height="Auto"  Width="Auto" ItemsSource="{Binding Path = SkillList}" SelectedItem="{Binding Path=SelectedJob, Mode=TwoWay}" Visibility="{Binding IsFrameVisible, Converter={StaticResource BoolToVisibility}}">
+        <DataGrid x:Name="dataGridSkills" ColumnWidth="*" Grid.Row="6" Grid.ColumnSpan="5" Height="Auto"  Width="Auto" ItemsSource="{Binding Path = SkillList}" SelectedItem="{Binding Path=SelectedJob, Mode=TwoWay}" Visibility="{Binding IsFrameVisible, Converter={StaticResource BoolToVisibility}}">
 
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header=" " >
@@ -55,11 +55,7 @@
 
             </DataGrid.Columns>
 
-          
-
-
-
-        </DataGrid>
+  </DataGrid>
 
     </Grid>
 </UserControl>
